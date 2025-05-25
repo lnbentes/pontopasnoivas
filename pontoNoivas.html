@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponto das Noivas - Aluguel de Vestidos de Casamento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfcfb; /* Off-white background */
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1920x800/F5E6E8/FFFFFF?text=Ponto+das+Noivas'); /* Placeholder for a wedding dress image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for text readability */
+        }
+        .btn-primary {
+            background-color: #D4AF37; /* Gold color */
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #C19A2B; /* Darker gold on hover */
+        }
+        .section-title {
+            color: #6B4F4F; /* Darker brown/maroon for titles */
+        }
+        .text-accent {
+            color: #D4AF37; /* Gold accent color */
+        }
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .footer-bg {
+            background-color: #6B4F4F; /* Darker brown/maroon for footer */
+        }
+        /* Styling for the loading spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #D4AF37;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="hero-section h-screen flex items-center justify-center text-center">
+        <div class="overlay absolute inset-0"></div>
+        <div class="z-10 text-white p-6 rounded-lg max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Ponto das Noivas</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Seu sonho de casamento começa aqui, com o vestido perfeito.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" id="schedule-visit-btn" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl">
+                    Agende sua Visita
+                </a>
+                <a href="#ai-tips" id="schedule-tips-btn" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl">
+                    Dicas de Casamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title text-4xl font-bold mb-8">Sobre Nós</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                Na <span class="font-semibold text-accent">Ponto das Noivas</span>, acreditamos que cada noiva merece um vestido que conte sua história e celebre seu amor. Localizada em Colatina, Espírito Santo, nossa loja oferece uma seleção exclusiva de vestidos de noiva para aluguel, combinando elegância, qualidade e as últimas tendências.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Com atendimento personalizado e um ambiente acolhedor, nossa equipe está pronta para ajudar você a encontrar o vestido dos seus sonhos, garantindo que você se sinta deslumbrante no dia mais especial da sua vida.
+            </p>
+        </div>
+    </section>
+
+    <section id="collection" class="py-16 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title text-4xl font-bold mb-12">Nossa Coleção</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/E8D7D7/6B4F4F?text=Clássico" alt="Vestido de Noiva Clássico" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Estilo Clássico</h3>
+                        <p class="text-gray-600">Elegância atemporal com detalhes sofisticados.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/D7E8D7/6B4F4F?text=Moderno" alt="Vestido de Noiva Moderno" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Design Moderno</h3>
+                        <p class="text-gray-600">Cortes contemporâneos e tecidos inovadores.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/D7D7E8/6B4F4F?text=Romântico" alt="Vestido de Noiva Romântico" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Toque Romântico</h3>
+                        <p class="text-gray-600">Rendas delicadas e silhuetas esvoaçantes.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/E8E8D7/6B4F4F?text=Minimalista" alt="Vestido de Noiva Minimalista" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Minimalista Chic</h3>
+                        <p class="text-gray-600">Simplicidade e sofisticação em cada detalhe.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/D7E8E8/6B4F4F?text=Princesa" alt="Vestido de Noiva Princesa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Estilo Princesa</h3>
+                        <p class="text-gray-600">Volume e glamour para um conto de fadas.</p>
+                    </div>
+                </div>
+                <div class="card rounded-lg overflow-hidden shadow-md">
+                    <img src="https://placehold.co/600x400/E8D7E8/6B4F4F?text=Plus+Size" alt="Vestido de Noiva Plus Size" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Curvas Perfeitas</h3>
+                        <p class="text-gray-600">Modelos que realçam a beleza em todos os tamanhos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title text-4xl font-bold mb-12">O Que Nossas Noivas Dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg text-left">
+                    <p class="text-gray-700 italic mb-4">"A Ponto das Noivas tornou meu sonho realidade! O atendimento foi impecável e encontrei o vestido perfeito que superou todas as minhas expectativas."</p>
+                    <p class="font-semibold text-accent">- Maria Silva</p>
+                </div>
+                <div class="card p-6 rounded-lg text-left">
+                    <p class="text-gray-700 italic mb-4">"Desde o primeiro contato até a retirada do vestido, tudo foi maravilhoso. A variedade é incrível e a qualidade dos vestidos é excelente. Recomendo muito!"</p>
+                    <p class="font-semibold text-accent">- Juliana Santos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-tips" class="py-16 px-4 md:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title text-4xl font-bold mb-8">✨ Dicas de Planejamento de Casamento com IA ✨</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                Precisa de ajuda com o planejamento do seu casamento? Pergunte à nossa inteligência artificial! Descreva sua dúvida ou o que você precisa de ajuda e receba dicas personalizadas.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+                <textarea id="planning-query" class="w-full p-4 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-accent" rows="5" placeholder="Ex: 'Como organizar a lista de convidados?', 'Ideias para decoração de casamento rústico', 'O que fazer no dia anterior ao casamento?'"></textarea>
+                <button id="get-tips-btn" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl flex items-center justify-center mx-auto">
+                    Obter Dicas ✨
+                    <span id="loading-spinner" class="spinner ml-3 hidden"></span>
+                </button>
+                <div id="tips-output" class="mt-8 p-6 bg-gray-100 rounded-lg text-left text-gray-800 leading-relaxed hidden">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="section-title text-4xl font-bold mb-12">Fale Conosco</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div class="text-left">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Informações de Contato</h3>
+                    <p class="text-lg text-gray-700 mb-0"><i class="fas fa-map-marker-alt text-accent mr-3"></i> R. Alexandre Calmon, 343</p>
+                    <p class="text-lg text-gray-700 mb-3 ml-8"> Centro, Colatina - ES, 29700-040</p>
+                    <p class="text-lg text-gray-700 mb-3"><i class="fas fa-phone text-accent mr-3"></i> (27) 3721-4898</p>
+                    <p class="text-lg text-gray-700 mb-3">
+                        <a href="https://wa.me/+5527995261415" class="text-gray-700 hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-accent mr-3"></i> (27) 99526-1415
+                        </a>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-3">
+                        <a href="https://www.instagram.com/pontodasnoivascolatina/" class="text-gray-700 hover:text-accent transition-colors duration-300">
+                            <i class="fab fa-instagram text-accent mr-3"></i> instagram.com/pontodasnoivascolatina
+                        </a>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-3"><i class="fas fa-clock text-accent mr-3"></i> Segunda a Sexta: 8h - 17h</p>
+                    <p class="text-lg text-gray-700"><i class="fas fa-clock text-accent mr-3"></i> Sábado: 8h - 12h</p>
+                </div>
+
+                <div class="w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24574.88988630004!2d-40.634982141249594!3d-19.53634919188277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb7a8288d38d21f%3A0xdf86d1b559bf7e9a!2sPonto%20das%20Noivas!5e0!3m2!1spt-BR!2sbr!4v1748205772940!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bg text-white py-8 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="text-sm mb-4 md:mb-0">© 2025 Ponto das Noivas. Todos os direitos reservados a @lnbentes.</p>
+            <div class="flex space-x-6">
+                <a href="https://www.instagram.com/pontodasnoivascolatina/" class="text-white hover:text-accent transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://wa.me/+5527995261415" class="text-white hover:text-accent transition-colors duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for the "Agende sua Visita" button
+        document.getElementById('schedule-visit-btn').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            const targetId = this.getAttribute('href'); // Get the target section ID from href
+            const targetSection = document.querySelector(targetId); // Select the target section
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth' // Enable smooth scrolling
+                });
+            }
+        });
+
+        // Smooth scroll for the "Dicas de Casamento" button
+        document.getElementById('schedule-tips-btn').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor click behavior
+            const targetId = this.getAttribute('href'); // Get the target section ID from href
+            const targetSection = document.querySelector(targetId); // Select the target section
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth' // Enable smooth scrolling
+                });
+            }
+        });
+
+        document.getElementById('get-tips-btn').addEventListener('click', async () => {
+            const queryInput = document.getElementById('planning-query');
+            const tipsOutput = document.getElementById('tips-output');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const getTipsBtn = document.getElementById('get-tips-btn');
+
+            const prompt = queryInput.value.trim();
+
+            if (!prompt) {
+                tipsOutput.innerHTML = '<p class="text-red-600">Por favor, digite sua pergunta para obter dicas.</p>';
+                tipsOutput.classList.remove('hidden');
+                return;
+            }
+
+            // Show loading spinner and disable button
+            loadingSpinner.classList.remove('hidden');
+            getTipsBtn.disabled = true;
+            tipsOutput.classList.add('hidden'); // Hide previous output
+
+            try {
+                let chatHistory = [];
+                chatHistory.push(
+                    { role: "user", 
+                    parts: [
+                        { text: `Forneça dicas de planejamento de casamento para a seguinte pergunta: ${prompt}.
+
+                            contexto:
+                            Seja conciso e direto;
+                            Seja simpático;
+                            Não seia do contexto de Casamento, avise que você foi treinada para responder somente sobre assuntos de casamento;
+                            Se perguntarem onde deve ir para compra ou alugar os vestidos, responda: "Vá no Ponto das Noivas, sempre a melhor opção! Endereço: R. Alexandre Calmon, 343";
+                            Formate a resposta no padrão html para caber dentro de uma caixa de respostas;
+                            Responda somente o conteudo da resposta;
+                            Não utilize o bloco de código com html nele;
+                            ` }]});
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    tipsOutput.innerHTML = `<p>${text}</p>`;
+                    tipsOutput.classList.remove('hidden');
+                } else {
+                    tipsOutput.innerHTML = '<p class="text-red-600">Desculpe, não foi possível gerar dicas. Tente novamente.</p>';
+                    tipsOutput.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Erro ao chamar a API Gemini:', error);
+                tipsOutput.innerHTML = '<p class="text-red-600">Ocorreu um erro ao buscar as dicas. Por favor, tente novamente mais tarde.</p>';
+                tipsOutput.classList.remove('hidden');
+            } finally {
+                // Hide loading spinner and enable button
+                loadingSpinner.classList.add('hidden');
+                getTipsBtn.disabled = false;
+            }
+        });
+    </script>
+
+</body>
+</html>
